@@ -1,6 +1,10 @@
+/// Library for perfroming matrix and vector math
 public struct matrixLib {
-    public private(set) var text = "Hello, World!"
-
-    public init() {
+    
+    
+    /// hello
+    /// - Returns: hello there
+    public func Hello() -> String{
+        "hello there"
     }
 }
