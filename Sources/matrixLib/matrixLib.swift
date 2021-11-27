@@ -51,15 +51,15 @@ public struct Matrix{
         }
     }
     
-    //    matrix operations
-    /// Multiply two matrices together using a naive multiplication algorithm
-    /// - Parameters:
-    ///   - matA: rows : M         columns : K
-    ///   - matB: rows : K         columns : P
-    /// - Returns: Outputs matrix with dimensions M by P
+    
     
 }
-
+//    matrix operations
+/// Multiply two matrices together using a naive multiplication algorithm
+/// - Parameters:
+///   - matA: rows : M         columns : K
+///   - matB: rows : K         columns : P
+/// - Returns: Outputs matrix with dimensions M by P
 public func multiply(matA : Matrix,matB : Matrix) -> Matrix{
     var result = Matrix(rows: matA.rows,columns: matB.columns,type: .zeroMatrix)
     if(matA.columns == matB.rows){
