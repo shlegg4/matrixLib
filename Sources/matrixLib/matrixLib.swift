@@ -57,23 +57,23 @@ public struct Matrix{
     ///   - matA: rows : M         columns : K
     ///   - matB: rows : K         columns : P
     /// - Returns: Outputs matrix with dimensions M by P
-    public func multiply(matA : Matrix,matB : Matrix) -> Matrix{
-        var result = Matrix(rows: matA.rows,columns: matB.columns,type: .zeroMatrix)
-        if(matA.columns == matB.rows){
-        for i in 0..<matA.rows{
-            for j in 0..<matB.columns{
-                var sum : Double = 0
-                for k in 1..<matA.columns{
-                    sum += matA[i,k] * matB[k,j]
-                }
-                result[i,j] = sum
-            }
-        }
-        }else{
-            print("dimension error")
-        }
-        return result
-    }
     
 }
 
+public func multiply(matA : Matrix,matB : Matrix) -> Matrix{
+    var result = Matrix(rows: matA.rows,columns: matB.columns,type: .zeroMatrix)
+    if(matA.columns == matB.rows){
+    for i in 0..<matA.rows{
+        for j in 0..<matB.columns{
+            var sum : Double = 0
+            for k in 1..<matA.columns{
+                sum += matA[i,k] * matB[k,j]
+            }
+            result[i,j] = sum
+        }
+    }
+    }else{
+        print("dimension error")
+    }
+    return result
+}
