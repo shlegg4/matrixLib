@@ -8,7 +8,6 @@ public struct Matrix{
         case custMatrix
     }
     
-    
     let rows : Int
     let columns : Int
     var data : [Double]  = []
@@ -50,10 +49,8 @@ public struct Matrix{
             self.data[(row*self.columns) + column] = newValue
         }
     }
-    
-    
-    
 }
+
 //    matrix operations
 /// Multiply two matrices together using a naive multiplication algorithm
 /// - Parameters:
@@ -70,6 +67,43 @@ public func multiply(matA : Matrix,matB : Matrix) -> Matrix{
                 sum += matA[i,k] * matB[k,j]
             }
             result[i,j] = sum
+        }
+    }
+    }else{
+        print("dimension error")
+    }
+    return result
+}
+
+/// Add two matrices together position does not matter function is commutative. Matrices must have same dimensions.
+/// - Parameters:
+///   - matA: M by N matrix
+///   - matB: M by N matrix
+/// - Returns: M by N matrix
+public func add(matA : Matrix,matB : Matrix) -> Matrix{
+    var result = Matrix(rows: matA.rows,columns: matB.columns,type: .zeroMatrix)
+    if(matA.columns == matB.columns && matA.rows == matB.rows){
+    for i in 0..<matA.rows{
+        for j in 0..<matB.columns{
+            result[i,j] = matA[i,j] + matB[i,j]
+        }
+    }
+    }else{
+        print("dimension error")
+    }
+    return result
+}
+/// Add two matrices together position does not matter function is commutative. Matrices must have same dimensions.
+/// - Parameters:
+///   - matA: M by N matrix
+///   - matB: M by N matrix
+/// - Returns: M by N matrix
+public func sub(matA : Matrix,matB : Matrix) -> Matrix{
+    var result = Matrix(rows: matA.rows,columns: matB.columns,type: .zeroMatrix)
+    if(matA.columns == matB.columns && matA.rows == matB.rows){
+    for i in 0..<matA.rows{
+        for j in 0..<matB.columns{
+            result[i,j] = matA[i,j] - matB[i,j]
         }
     }
     }else{
