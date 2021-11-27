@@ -66,7 +66,7 @@ public func multiply(matA : Matrix,matB : Matrix) -> Matrix{
     for i in 0..<matA.rows{
         for j in 0..<matB.columns{
             var sum : Double = 0
-            for k in 1..<matA.columns{
+            for k in 0..<matA.columns{
                 sum += matA[i,k] * matB[k,j]
             }
             result[i,j] = sum
