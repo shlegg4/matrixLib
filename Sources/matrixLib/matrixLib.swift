@@ -39,7 +39,7 @@ public struct Matrix{
         row >= 0 && row <= self.rows && column >= 0 && column <= self.columns
     }
     
-    subscript(row : Int, column : Int) -> Double{
+    public subscript(row : Int, column : Int) -> Double{
         get{
             assert(indexisvalid(row: row, column: column), "Index out of range")
             return self.data[(row*self.columns) + column]
