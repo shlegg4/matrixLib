@@ -19,7 +19,7 @@ public extension matOperations{
         if(matA.columns == matB.rows){
         for i in 0..<matA.rows{
             for j in 0..<matB.columns{
-                var sum : Double = 0
+                var sum : Float = 0
                 for k in 0..<matA.columns{
                     sum += matA[i,k] * matB[k,j]
                 }
@@ -86,9 +86,9 @@ public struct Matrix : matOperations{
     }
     public let rows : Int
     public let columns : Int
-    var data : [Double]  = []
+    var data : [Float]  = []
     
-    public init(rows : Int, columns : Int, type : types, data : [Double]? = nil ){
+    public init(rows : Int, columns : Int, type : types, data : [Float]? = nil ){
         self.rows = rows
         
         switch type{
@@ -134,7 +134,7 @@ public struct Matrix : matOperations{
         row >= 0 && row <= self.rows && column >= 0 && column <= self.columns
     }
     
-    public subscript(row : Int, column : Int) -> Double{
+    public subscript(row : Int, column : Int) -> Float{
         get{
             assert(indexisvalid(row: row, column: column), "Index out of range")
             return self.data[(row*self.columns) + column]
