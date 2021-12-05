@@ -32,6 +32,18 @@ public extension matOperations{
         return result
     }
     
+    static func scalar_multiply(matA: Matrix, scalar : Float) -> Matrix{
+        var result = Matrix(rows: matA.rows, columns: matA.columns, type: .zeroMatrix)
+        for i in 0..<matA.rows{
+            for j in 0..<matA.columns{
+                result[i,j] = matA[i,j] * scalar
+            }
+        }
+        return result
+        
+        
+    }
+    
     
     /// Add two matrices together position does not matter function is commutative. Matrices must have same dimensions.
     /// - Parameters:
